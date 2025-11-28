@@ -1,3 +1,5 @@
+from turtledemo.paint import switchupdown
+
 print(r'''
 *******************************************************************************
           |                   |                  |                     |
@@ -22,3 +24,21 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 ''')
 print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.")
+
+direction = input("Left or Right? ").lower()
+if direction == "left" or "l":
+    swimOrWait = input("Swim or Wait? ").lower()
+    if swimOrWait == "wait":
+        door = input("Which door? ").lower()
+        if door == "red":
+            print("Burned by Fire. Game Over")
+        elif door == "blue":
+            print("Eaten by beasts. Game Over.")
+        elif door == "yellow":
+            print("You Win!")
+        else:
+            print("Game Over")
+    else:
+        print("Attacked by trout. Game Over")
+else:
+    print("Fall into a hole. Game over.")
